@@ -24,7 +24,8 @@ class ChoosePassword extends Component {
     }
 
     callAPI(data){
-        let url = `http://localhost:${process.env.PORT}/createUser`
+        let url = `https://staffingportals.herokuapp.com/createUser`
+        console.log(url)
         axios.post(url, data)
         .then(response => console.log("save"));
     }
