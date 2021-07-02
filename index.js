@@ -9,10 +9,10 @@ const app = express()
 app.use(express.json())
 app.use(cors());
 app.use(express.urlencoded({ extended: false }))
-app.use(express.static(path.join(__dirname, '../Client/build')));
+app.use(express.static(path.join(__dirname, './Client/build')));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../Client/build/index.html'));
+  res.sendFile(path.join(__dirname, './Client/build/index.html'));
 });
 
 const {SF_LOGIN_URL, SF_USERNAME, SF_PASSWORD, SF_TOKEN} = process.env
