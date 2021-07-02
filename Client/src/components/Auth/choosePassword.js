@@ -24,7 +24,8 @@ class ChoosePassword extends Component {
     }
 
     callAPI(data){
-        axios.post('http://localhost:13742/createUser', data)
+        let url = `http://localhost:${process.env.PORT}/createUser`
+        axios.post(url, data)
         .then(response => console.log("save"));
     }
 
