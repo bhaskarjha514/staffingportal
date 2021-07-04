@@ -74,6 +74,7 @@ class BasicDetails extends Component {
     render() {
         return (
             <>
+            <NavBar/>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label htmlFor="experience">Experience</label>
