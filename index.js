@@ -22,10 +22,17 @@ const conn = new jsForce.Connection({
     loginUrl:SF_LOGIN_URL
 })
 
+app.set('conn',conn)
+
 conn.login(SF_USERNAME,SF_PASSWORD+SF_TOKEN,(err,userInfo)=>{
     if(err) console.error(err)
     else console.log(`User Id: ${userInfo.id} OrgId: ${userInfo.organizationId}`)
 })
+
+// ROUTES
+const contactRoutes = require('./routes/contact')
+const accountRoutes = require('./routes/account')
+
 
 app.get('/accounts',(req,res)=>{
     conn.query("SELECT Id, Name From Account",(err,result)=>{
@@ -41,6 +48,11 @@ app.get('/accounts',(req,res)=>{
         }
     })
 })
+
+
+app.use('/contact',contactRoutes)
+//app.use('/account',accountRoutes)
+
 app.post('/createUser',async(req,res,next)=>{
    
     const userType = req.body.userType

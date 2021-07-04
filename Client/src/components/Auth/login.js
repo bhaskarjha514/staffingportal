@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import firebase from 'firebase';
 import { db } from '../../firebase_config'
 import NavBar from '../UI/Navbar';
+import axios from 'axios';
 
 
 class Login extends Component {
@@ -19,7 +20,8 @@ class Login extends Component {
         super(props);
         this.state = {
             email: "",
-            password: ""
+            password: "",
+            hasFilledBasicActivity:false
         };
         this.commonChange = this.commonChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -29,6 +31,7 @@ class Login extends Component {
             [event.target.name]: event.target.value
         });
     }
+  
     onSubmit(event) {
         event.preventDefault();
         if (this.state.email.length < 1 || this.state.password.length < 1) {
