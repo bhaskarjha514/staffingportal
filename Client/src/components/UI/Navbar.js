@@ -20,6 +20,9 @@ export default function NavBar(props) {
               </li> </>:
               <>
               <li className="nav-item">
+                <Link className="nav-link" to={"/basic_detail"}>Basic Details</Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to={"/experience_detail"}>Add Experience</Link>
               </li>
               
