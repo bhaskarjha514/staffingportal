@@ -27,6 +27,7 @@ class BasicDetails extends Component {
         axios.post(prodUrl, data)
             .then(response => {
                 if (response.data.status) {
+                    toast("Resume Uploaded")
                     this.props.history.push('/home')
                 } else {
                     toast(response.data.msg)
