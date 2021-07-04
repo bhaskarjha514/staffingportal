@@ -30,7 +30,7 @@ function App() {
     let devUrl = "http://localhost:3001/contact/getPicklistValues"
     let prodUrl = "https://staffingportals.herokuapp.com/contact/getPicklistValues"
     if(!response){
-      axios.get(devUrl)
+      axios.get(prodUrl)
       .then(result => {
         const resp = result.data.res
         
