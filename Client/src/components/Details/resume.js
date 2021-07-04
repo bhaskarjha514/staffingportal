@@ -17,7 +17,7 @@ import history from '../history';
 class BasicDetails extends Component {
     componentDidMount = () => {
         if (localStorage.getItem("uid") === null) {
-            this.props.history.goBack()
+            this.props.history.push('/signup')
         }
     }
     callAPI() {

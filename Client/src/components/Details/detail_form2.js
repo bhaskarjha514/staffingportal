@@ -16,7 +16,7 @@ import history from '../history';
 class BasicDetails extends Component {
     componentDidMount = () => {
         if(localStorage.getItem("uid")===null){
-            this.props.history.goBack()
+            this.props.history.push('signup')
         }
     }
     callAPI(data){
@@ -26,7 +26,7 @@ class BasicDetails extends Component {
         .then(response => {
             if(response.data.status){
                 toast("Experience Added")
-                this.props.history.goBack()
+                // this.props.history.goBack()
                 this.props.history.push('/home')
             }else{
                 toast(response.data.msg)
