@@ -25,6 +25,7 @@ class BasicDetails extends Component {
         axios.post(prodUrl, data)
         .then(response => {
             if(response.data.status){
+                toast("Experience Added")
                 this.props.history.goBack()
                 this.props.history.push('/home')
             }else{
